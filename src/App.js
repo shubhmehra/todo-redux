@@ -1,10 +1,20 @@
 import React from "react";
+import { Container } from "semantic-ui-react";
+
+import Todo from "./components/Todo";
+import TodoForm from "./components/TodoForm";
+
+//redux
+import { Provider } from "react-redux";
 
 function App() {
   return (
-    <div className="App">
-      <h1>It works!</h1>
-    </div>
+    <Provider>
+      <Container>
+        <Todo />
+        <TodoForm />
+      </Container>
+    </Provider>
   );
 }
 
