@@ -9,7 +9,7 @@ import { addTodo } from "../action/todo";
 const TodoForm = ({ addTodo }) => {
   const [title, setTitle] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (title === "") {
       return alert("Please add a todo");
@@ -29,14 +29,11 @@ const TodoForm = ({ addTodo }) => {
       <Form onSubmit={handleSubmit}>
         <Form.Input
           type="text"
-          label="Todo Title"
-          placeholder="Your next todo"
+          label="Enter your task & press Enter"
+          placeholder="Task title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <Button color="blue" type="submit">
-          Submit
-        </Button>
       </Form>
     </div>
   );
